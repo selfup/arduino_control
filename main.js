@@ -8,7 +8,12 @@ const five = require('johnny-five');
 const board = new five.Board({port: 'COM4'});
 
 const pin = {
-  12: {},
+  12: {
+    led: {
+      on: () => console.log('on'),
+      off: () => console.log('off')
+    },
+  },
 };
 
 const io = socketIo(server);
